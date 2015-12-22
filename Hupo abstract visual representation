@@ -1,0 +1,27 @@
+########################################################################
+# Mining the human proteome organization abstracts 
+# By John Tra, PhD
+#########################################################################
+
+hpm1 <- hupomap1
+isS4(hpm1)
+dS4<-new("data.frame",hpm1) 
+h <-data.frame(hpm1)
+isS4(h)
+hs4<-new("data.frame",h) 
+asS4(h)
+class(h)
+h3<- asS4(h)
+h4<- new("data.frame", h)
+r = sqrt(h3$Plasma/pi)
+
+symbols(h3$Year, h3$registrants, circles=r, inches=0.30, fg="white",
+        bg="lightblue", main="Use of Theme Plasma by Registrants at US HUPO Conferences",
+        ylab=" Registrants to US HUPO Conferences",
+        xlab="Years")
+text(City,registrants, rownames(h), cex=0.6)
+
+
+qplot(Year, registrants, data = h, label = City, colour='red', size = 50*Plasma)+ 
+geom_text(colour = "black", hjust=0,vjust=1, size=3)+
+xlim(c(1,7))
