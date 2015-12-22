@@ -1,0 +1,17 @@
+#######################################################
+# 2D graph representation by John Tra, PhD
+# Date: 3/3/2013
+######################################################
+attach(aricdata)
+x<- protprob
+y<- Distinct.Peptides
+xs2d <- kde2d(x,y)
+persp(xs2d, box=TRUE)
+detach(aricdata)
+###########################
+attach(aricdata)
+x<- protprob
+y<- Distinguishable.Proteins
+xs2d <- kde2d(x,y)
+persp(xs2d, box=TRUE)
+detach(aricdata)
