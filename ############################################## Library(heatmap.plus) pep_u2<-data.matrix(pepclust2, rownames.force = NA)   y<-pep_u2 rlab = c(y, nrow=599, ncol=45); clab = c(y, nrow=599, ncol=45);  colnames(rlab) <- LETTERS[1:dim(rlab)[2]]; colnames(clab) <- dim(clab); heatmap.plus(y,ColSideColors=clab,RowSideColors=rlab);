@@ -1,0 +1,15 @@
+##############################################
+# By John Tra, PhD
+# Heatmap of peptides spectral count
+############################################
+
+Library(heatmap.plus)
+pep_u2<-data.matrix(pepclust2, rownames.force = NA) 
+
+y<-pep_u2
+rlab = c(y, nrow=599, ncol=45);
+clab = c(y, nrow=599, ncol=45);
+
+colnames(rlab) <- LETTERS[1:dim(rlab)[2]];
+colnames(clab) <- dim(clab);
+heatmap.plus(y,ColSideColors=clab,RowSideColors=rlab);
